@@ -9,10 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var imageViewer:UIImageView!
+    @IBOutlet weak var toggleButton:UIButton!
+    @IBOutlet weak var speedLabel:UILabel!
+    
+    var imageArrays = [
+        UIImage.init(named: "1.jpeg")!,
+        UIImage.init(named: "2.jpeg")!,
+        UIImage.init(named: "3.jpeg")!,
+        UIImage.init(named: "4.jpeg")!,
+        UIImage.init(named: "5.jpeg")!,
+        UIImage.init(named: "6.jpeg")!,
+        UIImage.init(named: "7.jpeg")!,
+        UIImage.init(named: "8.jpeg")!,
+        UIImage.init(named: "9.jpg")!,
+        UIImage.init(named: "10.jpg")!
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        imageViewer.animationImages = imageArrays
+        imageViewer.animationDuration = 20
+    }
+    
+    @IBAction func clickButton(_ sender:Any){
+        if imageViewer.isAnimating {
+            imageViewer.stopAnimating()
+            toggleButton.setTitle("start", for: UIControlState.normal)
+        }else {
+            imageViewer.startAnimating()
+            toggleButton.setTitle("stop", for: UIControlState.normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {
