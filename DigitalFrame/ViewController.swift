@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageViewer:UIImageView!
     @IBOutlet weak var toggleButton:UIButton!
     @IBOutlet weak var speedLabel:UILabel!
+    @IBOutlet weak var speedSlider:UISlider!
     
     var imageArrays = [
         UIImage.init(named: "1.jpeg")!,
@@ -42,6 +43,18 @@ class ViewController: UIViewController {
             imageViewer.startAnimating()
             toggleButton.setTitle("stop", for: UIControlState.normal)
         }
+    }
+    
+    @IBAction func movingSlider(_ sender:Any){
+        var durationTime: Double = Double(speedSlider.value)
+        imageViewer.animationDuration = durationTime
+        if toggleButton.title(for: UIControlState.normal)! == "stop" {
+            imageViewer.startAnimating()
+        }
+        var durationTimeforLabel : String = String(durationTime)
+        var shorter = durationTimeforLabel.prefix(5)
+        speedLabel.text = String(shorter)
+        
     }
 
     override func didReceiveMemoryWarning() {

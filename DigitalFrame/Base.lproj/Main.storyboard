@@ -22,9 +22,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fun-Nb-cOZ">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="fun-Nb-cOZ">
                                 <rect key="frame" x="20" y="543" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="movingSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="tjm-QC-RZF"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-ZD-lF1">
                                 <rect key="frame" x="171" y="602" width="32" height="30"/>
@@ -48,6 +51,7 @@
                     <connections>
                         <outlet property="imageViewer" destination="ziw-WU-lEN" id="Myj-4W-6GM"/>
                         <outlet property="speedLabel" destination="Y6H-GA-Pfe" id="HdD-9A-H8E"/>
+                        <outlet property="speedSlider" destination="fun-Nb-cOZ" id="Qdx-Gx-scc"/>
                         <outlet property="toggleButton" destination="HfW-ZD-lF1" id="Ti1-PO-sf0"/>
                     </connections>
                 </viewController>
